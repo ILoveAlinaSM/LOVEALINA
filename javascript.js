@@ -1,10 +1,11 @@
-document.getElementById("confessBtn").addEventListener("click", function() {
-    const messages = [
-        "Я тебя люблю! ❤️",
-        "Ты самая красивая! 🌸",
-        "Мне так повезло, что ты есть в моей жизни! 💫",
-        "Давай будем вместе всегда? 💞"
-    ];
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById("message").textContent = randomMessage;
-});
+// Добавляем мерцание случайным сердечкам
+setInterval(() => {
+    const hearts = document.querySelectorAll('.hearts span');
+    hearts.forEach(heart => {
+        if (Math.random() > 0.7) {
+            heart.style.animation = 'none';
+            void heart.offsetWidth; // Триггер перезапуска анимации
+            heart.style.animation = 'float 3s ease-in-out infinite';
+        }
+    });
+}, 1000);
