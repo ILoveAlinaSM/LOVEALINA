@@ -1,36 +1,116 @@
 body {
-    background-color: pink;
-    font-family: Arial, sans-serif;
+    background-color: #fff0f5;
+    font-family: 'Arial', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .container {
     text-align: center;
-    background-color: white;
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
 }
 
 h1 {
     color: #ff6b9d;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button {
-    background-color: #ff6b9d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+.heart {
+    animation: heartbeat 1.5s infinite;
 }
 
-button:hover {
-    background-color: #ff4785;
+.message {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+}
+
+.message p {
+    font-size: 1.2em;
+    color: #d23369;
+    margin: 0;
+}
+
+.hearts {
+    margin-top: 15px;
+}
+
+.hearts span {
+    display: inline-block;
+    margin: 0 5px;
+    animation: float 3s ease-in-out infinite;
+    font-size: 1.5em;
+}
+
+.hearts span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.hearts span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.poem {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.1);
+}
+
+.poem p {
+    color: #8b3a62;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeInLine 0.8s forwards;
+}
+
+.poem p:nth-child(1) { animation-delay: 0.5s; }
+.poem p:nth-child(2) { animation-delay: 1s; }
+.poem p:nth-child(3) { animation-delay: 1.5s; }
+.poem p:nth-child(4) { animation-delay: 2s; }
+.poem p:nth-child(5) { animation-delay: 2.5s; }
+.poem p:nth-child(6) { animation-delay: 3s; }
+.poem p:nth-child(7) { animation-delay: 3.5s; }
+.poem p:nth-child(8) { animation-delay: 4s; }
+
+.footer {
+    margin-top: 30px;
+    color: #ff6b9d;
+    font-size: 1.1em;
+}
+
+.footer .name {
+    font-weight: bold;
+    color: #d23369;
+}
+
+/* Анимации */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeInLine {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
